@@ -1,0 +1,29 @@
+code = 0000
+while not all(int(digit) < 10 for digit in str(code)):
+    code = (code * 10) % 10000
+print(code)
+code = 0000
+while not all(int(digit) < 10 for digit in str(code)):
+    code = (code * 10) % 10000
+print(code)def main():
+    board = ChessBoard()
+
+    for i in range(8):
+        for j in range(8):
+            if (i + j) % 2 == 0:
+                board.place_piece(ChessPiece('white', 'pawn'), i, j)
+                board.place_piece(ChessPiece('black', 'pawn'), i, j + 7)
+
+    while True:
+        print(board)
+        piece_x, piece_y = map(int, input("Enter the piece's x and y coordinates (e.g., 2 3): ").split())
+        new_x, new_y = map(int, input("Enter the new x and y coordinates (e.g., 3 4): ").split())
+
+        piece = board.get_piece(piece_x, piece_y)
+
+        if piece is None:
+            print("There is no piece at the given coordinates.")
+        elif board.move_piece(piece, new_x, new_y):
+            print("Move successful.")
+        else:
+            print("Move is not valid.") 
