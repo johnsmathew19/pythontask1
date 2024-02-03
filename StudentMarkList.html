@@ -1,0 +1,65 @@
+'''
+Program to accept name and marks (0-100) in 3 subjects of
+a student from console , find total marks , result and grade
+total marks sum of the 3 marks
+result - if student gets total marks equal or above 120
+and equal or above 35 in each subject then "Passed"
+else "Failed"
+grade: -
+if student gets 240 or above then grade is "Distinction"
+if student gets below 240 and equal or  above then 180
+grade is "First Class"
+if student gets below 180 and equal or  above then 150
+grade is "Second Class"
+if student gets below 150 grade is "Third Class"
+if grade is not provided for "Failed" students
+'''
+sname=input("Name:")
+m1=int(input("Marks-1(0-100):"))
+m2=int(input("Marks-2(0-100):"))
+m3=int(input("Marks-3(0-100):"))
+total=m1+m2+m3 #total marks
+#result
+if m1<35 or m2<35 or m3 <35 or total<120:
+    result="Failed"
+else:
+    result="Passed"
+#grade
+if result=="Passed":
+    if total>=240:
+        grade="Distinction"
+    elif total >=180:
+        grade="First Class"
+    elif total >=150:
+        grade="Second Class"
+    else:
+        grade="Third Class"
+else: #for failed students
+    grade="" #no grade
+
+print("Total=",total)
+print("Result=",result)
+print("Grade:",grade)
+
+'''
+Modify the above code to validate the marks, 
+i.e. process must not happen in case if 
+any of the marks is not between 0 and 100 , provide
+an appropriate message 
+
+Write a program to accept Name and annual Gross Income 
+of a person , calculate the Income tax to be paid and 
+and also find the Net Income after deducting the tax 
+if annual income below 2.5 lacs , no tax , 
+if equal or above 2.5 lacs and below 5 lacs , tax is 5% 
+of the amount -2.5 lacs, 
+if above equal or 5 lacs and less than 7.5 lacs, then 
+tax is 12500+ 10% for the amount -5 lacs , 
+if above equal or 7.5 lacs and less than 10 lacs, then 
+tax is 37500+ 15% for the amount -7.5 lacs ,
+if above equal or 10 lacs and less than 15 lacs, then 
+tax is 75000+ 20% for the amount -10 lacs ,
+if above equal or 15 lacs 175000+ 30% for the 
+amount -15 lacs
+print tax payable and net salary.
+'''
